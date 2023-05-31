@@ -9,24 +9,31 @@ export default function Header({ current, headerData, setCurrentContent }) {
   const [isOpen, setIsOpen] = useState(false);
   console.log(isOpen);
   return (
-    <>
-      <div className="hidden sm:flex w-full h-20 justify-end py-10 sticky top-0 z-[10] bg-black opacity-100">
-        {headerData.map((x) => {
-          return (
-            <div key={x} className="mx-2 sm:mx-10">
-              <p
-                onClick={() => setCurrentContent(x)}
-                className={`text-white cursor-pointer ${
-                  current === x
-                    ? "font-bold duration-100 underline jello"
-                    : "hover:animate-bounce h-4"
-                }`}
-              >
-                {x}
-              </p>
-            </div>
-          );
-        })}
+    <div className="flex justify-between h-20 py-10 sticky top-0 z-[10] bg-black opacity-100">
+      <div className="mx-2 sm:ml-10 sm:mr-0">
+        {current !== "Home" && (
+          <p className="text-xl animate-charcter font-kalam">
+            <span>Anjani </span> <span>Saxena... </span>
+          </p>
+        )}
+      </div>
+      <div className="hidden sm:flex w-full h-20 justify-end ">
+          {headerData.map((x) => {
+            return (
+              <div key={x} className="mx-2 sm:mx-10">
+                <p
+                  onClick={() => setCurrentContent(x)}
+                  className={`text-white cursor-pointer ${
+                    current === x
+                      ? "font-bold duration-100 underline jello"
+                      : "hover:animate-bounce h-4"
+                  }`}
+                >
+                  {x}
+                </p>
+              </div>
+            );
+          })}
       </div>
       <div
         className={`sm:hidden absolute  h-[50vh] z-10 right-0 top-0 flex justify-end  bg-orange-500 ${
@@ -34,7 +41,7 @@ export default function Header({ current, headerData, setCurrentContent }) {
         }`}
       >
         {isOpen && (
-          <div className="z-10 h-[100%] flex flex-col  justify-center	">
+          <div className="z-10 h-[100%] flex flex-col  justify-center w-full items-center	">
             {headerData.map((x) => {
               return (
                 <div key={x} className="mx-2 sm:mx-10 py-4">
@@ -57,7 +64,7 @@ export default function Header({ current, headerData, setCurrentContent }) {
           </div>
         )}
         <div
-          className={`group flex h-20 w-20 cursor-pointer items-center transition-transform duration-300	ease-in-out justify-center rounded-3xl p-2 z-10`}
+          className={`group absolute flex h-20 w-20 cursor-pointer items-center transition-transform duration-300	ease-in-out justify-center rounded-3xl p-2 z-10`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className="space-y-2">
@@ -83,7 +90,7 @@ export default function Header({ current, headerData, setCurrentContent }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 Header.ReactPropTypes = {

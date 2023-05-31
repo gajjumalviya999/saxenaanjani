@@ -3,7 +3,7 @@ import { careerGraphData } from "public/constants";
 export default function CarrerGraph({}) {
   return (
     <>
-      <div className="w-full flex flex-col duration-10 scroll-smooth">
+      <div className="w-full flex flex-col duration-10 scroll-smooth fadeinout duration-100">
         <h1 className="w-full text-center text-white text-4xl my-2 font-kalam">Trajectory of my Professional Journey...</h1>
           {careerGraphData?.map((x, index) => {
             return (

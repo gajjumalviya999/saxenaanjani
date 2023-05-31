@@ -5,7 +5,7 @@ import { current } from "tailwindcss/colors";
 import { AboutSection } from "public/constants";
 export default function About() {
   return (
-    <div className="py-10 w-full  font-kalam">
+    <div className="py-10 w-full  font-kalam mx-4">
       <div className="flex w-full justify-center fadeinout duration-100">
         <p className="text-white text-4xl">
           Who is Anjani Saxena? Here you go....
