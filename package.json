@@ -21,7 +21,6 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.1",
     "react-pdf": "^7.0.1",
-    "react-reveal": "^1.2.2",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
     "sweetalert2": "^11.7.5",

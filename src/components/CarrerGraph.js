@@ -1,12 +1,10 @@
 import React from "react";
 import { careerGraphData } from "public/constants";
-import { Reveal } from "react-reveal";
 export default function CarrerGraph({}) {
   return (
     <>
       <div className="w-full flex flex-col duration-10 scroll-smooth">
         <h1 className="w-full text-center text-white text-4xl my-2 font-kalam">Trajectory of my Professional Journey...</h1>
-        <Reveal bottom cascade delay={5000}>
           {careerGraphData?.map((x, index) => {
             return (
               <div className="w-full" key={index}>
@@ -26,7 +24,6 @@ export default function CarrerGraph({}) {
               </div>
             );
           })}
-        </Reveal>
       </div>
     </>
   );
