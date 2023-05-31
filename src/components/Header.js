@@ -41,7 +41,7 @@ export default function Header({ current, headerData, setCurrentContent }) {
         }`}
       >
         {isOpen && (
-          <div className="z-10 h-[100%] flex flex-col  justify-center w-full items-center	">
+          <div className="h-[100%] flex flex-col  justify-center w-full items-centerpy-10 sticky top-0 z-[10] bg-black opacity-100	">
             {headerData.map((x) => {
               return (
                 <div key={x} className="mx-2 sm:mx-10 py-4">
