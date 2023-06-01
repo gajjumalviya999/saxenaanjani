@@ -1,5 +1,7 @@
 import React from "react";
 import { careerGraphData } from "public/constants";
+import 'animate.css';
+
 export default function CarrerGraph({}) {
   return (
     <>
@@ -13,7 +15,7 @@ export default function CarrerGraph({}) {
                     index % 2 == 0 ? "sm:float-left" : "sm:float-right"
                   } hover:scale-110 duration-300 `}
                 >
-                  <div className="font-kalam">
+                  <div className="font-kalam animate__animated animate__fadeInUp">
                     <h1 className="my-1 font-bold">{x?.heading}</h1>
                     <p className="my-1">{x?.description}</p>
                     <p className="my-1">{x?.duration}</p>

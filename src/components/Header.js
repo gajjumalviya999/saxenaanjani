@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ReactPropTypes } from "react";
 import MenuIconActive from "../public/icons/menuactive.svg";
 import MenuIcon from "../public/icons/menu.svg";
-
 import Image from "next/image";
+import 'animate.css';
 
 export default function Header({ current, headerData, setCurrentContent }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Header({ current, headerData, setCurrentContent }) {
     <div className="flex justify-between h-20 py-10 sticky top-0 z-[10] bg-black opacity-100">
       <div className="mx-2 sm:ml-10 sm:mr-0">
         {current !== "Home" && (
-          <p className="text-xl animate-charcter font-kalam">
+          <p className="text-xl animate-charcter font-kalam ">
             <span>Anjani </span> <span>Saxena... </span>
           </p>
         )}
@@ -26,7 +26,7 @@ export default function Header({ current, headerData, setCurrentContent }) {
                   className={`text-white cursor-pointer ${
                     current === x
                       ? "font-bold duration-100 underline jello"
-                      : "hover:animate-bounce h-4"
+                      : "h-2"
                   }`}
                 >
                   {x}
@@ -36,19 +36,20 @@ export default function Header({ current, headerData, setCurrentContent }) {
           })}
       </div>
       <div
-        className={`sm:hidden absolute  h-[50vh] z-10 right-0 top-0 flex justify-end  bg-orange-500 ${
-          isOpen ? "w-full rounded-l-full rounded-br-full" : "bg-transparent"
+        className={`sm:hidden absolute  h-[50vh] z-10 right-0 top-0 flex justify-end  bg-orange-500  ${
+          isOpen ? "w-full rounded-l-full rounded-br-full " : "bg-transparent"
         }`}
       >
         {isOpen && (
-          <div className="h-[100%] flex flex-col  justify-center w-full items-centerpy-10 sticky top-0 z-[10] bg-black opacity-100	">
+          <div className="z-10 h-[100%] flex flex-col  justify-center w-full items-center animate__animated animate__fadeInTopRight animate__faster	">
             {headerData.map((x) => {
               return (
                 <div key={x} className="mx-2 sm:mx-10 py-4">
                   <p
                     onClick={() => {
                       setCurrentContent(x);
-                      setIsOpen(false);
+                      setTimeout(()=>setIsOpen(false),50)
+                      // setIsOpen(false);
                     }}
                     className={`text-white cursor-pointer ${
                       current === x
